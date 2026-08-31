@@ -28,9 +28,36 @@ There is no build step and there are no dependencies, so the folder loads as-is.
 3. Click **Load unpacked** and select this folder
 4. Pin the extension so the toolbar button is always visible
 
-Optionally set the keyboard shortcut at `chrome://extensions/shortcuts`. It
-defaults to <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>L</kbd> on macOS and
-<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>L</kbd> elsewhere.
+### The keyboard shortcut
+
+The manifest suggests <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>L</kbd> on macOS and
+<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>L</kbd> elsewhere, but **expect to set it
+by hand.** Chrome treats `suggested_key` as a suggestion only: it is applied
+once at install time and silently ignored if anything already holds that
+combination, with no warning anywhere in the UI. That combination is also the
+default autofill shortcut for Bitwarden, LastPass and Dashlane, so a password
+manager will often win it.
+
+To assign it yourself:
+
+1. Open `chrome://extensions/shortcuts`
+2. Find **Page Saver**
+3. Click the field next to *Save current tab to a list* and press your keys
+4. Leave the scope as **In Chrome**
+
+Most `Cmd+Shift` letters are already taken by Chrome (`A`, `B`, `D`, `H`, `J`,
+`M`, `N`, `O`, `R`, `T`, `W`). <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>K</kbd>,
+<kbd>U</kbd> and <kbd>Y</kbd> are usually free.
+
+Two things worth knowing once you have set it:
+
+- The binding is stored in your Chrome profile, not in this repo, so it does not
+  follow the code to another machine, and editing `suggested_key` in the
+  manifest will no longer affect your own install.
+- Unpacked extensions get their ID from the folder's absolute path, so moving or
+  renaming this folder makes Chrome treat it as a brand new extension: the
+  shortcut and the per-domain suggestions reset. Your saved lists are unaffected,
+  because they are bookmarks and live outside the extension.
 
 ## Using it
 
