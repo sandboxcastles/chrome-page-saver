@@ -1,0 +1,167 @@
+.manage {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+  font-size: 14px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  padding: 8px 12px;
+  background: var(--bg);
+  color: var(--accent);
+  z-index: 10;
+}
+
+.skip-link:focus {
+  left: 8px;
+}
+
+.bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0 14px;
+}
+
+.bar__title {
+  margin: 0;
+  font-size: 20px;
+}
+
+.bar__tools {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex: 1 1 380px;
+  max-width: 560px;
+}
+
+.button {
+  white-space: nowrap;
+  padding: 7px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-subtle);
+}
+
+.button:hover {
+  background: var(--bg-hover);
+}
+
+.lists {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+
+.lists:focus-visible {
+  outline: none;
+}
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-subtle);
+  overflow: hidden;
+}
+
+.card__head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.card__title {
+  margin: 0;
+  font-size: 15px;
+}
+
+.card__actions {
+  display: flex;
+  gap: 10px;
+}
+
+.link-button--danger {
+  color: var(--danger);
+}
+
+.items {
+  list-style: none;
+  margin: 0;
+  padding: 6px;
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+.item {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 8px;
+  border-radius: var(--radius);
+}
+
+.item:hover {
+  background: var(--bg-hover);
+}
+
+.item__icon {
+  flex: 0 0 auto;
+}
+
+.item__link {
+  flex: 1 1 auto;
+  min-width: 0;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.item__link:hover {
+  text-decoration: underline;
+}
+
+.item__title {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.item__host {
+  display: block;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.item__remove {
+  flex: 0 0 auto;
+  border: none;
+  background: none;
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1;
+  padding: 4px 6px;
+  border-radius: var(--radius);
+}
+
+.item__remove:hover {
+  color: var(--danger);
+  background: var(--bg);
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  padding: 40px 0;
+  text-align: center;
+  color: var(--text-muted);
+}

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Save page to a list</title>
+    <link rel="stylesheet" href="shared.css" />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body class="popup">
+    <header class="page">
+      <img id="page-icon" class="page__icon" alt="" width="16" height="16" />
+      <div class="page__text">
+        <h1 id="page-title" class="page__title">Loading&hellip;</h1>
+        <p id="page-url" class="page__url"></p>
+      </div>
+    </header>
+
+    <p id="saved-notice" class="notice" hidden></p>
+
+    <div class="picker">
+      <label class="picker__label" for="list-input">Save to list</label>
+      <input
+        id="list-input"
+        class="picker__input"
+        type="text"
+        role="combobox"
+        autocomplete="off"
+        spellcheck="false"
+        aria-expanded="true"
+        aria-controls="list-options"
+        aria-describedby="picker-hint"
+        placeholder="Type to filter or name a new list"
+      />
+      <p id="picker-hint" class="picker__hint">
+        Use the arrow keys to choose, then press Enter to save.
+      </p>
+      <ul id="list-options" class="options" role="listbox" aria-label="Your lists"></ul>
+    </div>
+
+    <footer class="footer">
+      <label class="check">
+        <input id="close-tab" type="checkbox" />
+        <span>Close tab after saving</span>
+      </label>
+      <button id="manage" class="link-button" type="button">Manage lists</button>
+    </footer>
+
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+
+    <script src="popup.js" type="module"></script>
+  </body>
+</html>

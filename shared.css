@@ -1,0 +1,96 @@
+/* Contrast ratios here are checked against WCAG AA (4.5:1 for text). */
+:root {
+  color-scheme: light dark;
+
+  --bg: #ffffff;
+  --bg-subtle: #f1f3f5;
+  --bg-hover: #e7ebef;
+  --text: #16191d;
+  --text-muted: #55606b;
+  --border: #c8ced4;
+  --accent: #0b5cab;
+  --accent-text: #ffffff;
+  --danger: #a3121f;
+  --focus: #0b5cab;
+  --radius: 6px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1c1f23;
+    --bg-subtle: #262a2f;
+    --bg-hover: #323841;
+    --text: #f2f4f6;
+    --text-muted: #b3bcc6;
+    --border: #454c55;
+    --accent: #79b0f5;
+    --accent-text: #10151c;
+    --danger: #f4909a;
+    --focus: #9cc4fa;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--text);
+  background: var(--bg);
+}
+
+/* A single visible focus treatment everywhere, never removed. */
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+input[type='text'],
+input[type='search'] {
+  font: inherit;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 7px 9px;
+  width: 100%;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  padding: 2px;
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.status {
+  margin: 0;
+  padding: 0 12px 10px;
+  min-height: 1.45em;
+  color: var(--text-muted);
+}
+
+.status[data-tone='error'] {
+  color: var(--danger);
+  font-weight: 600;
+}

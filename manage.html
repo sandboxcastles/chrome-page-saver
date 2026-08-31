@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Page Saver lists</title>
+    <link rel="stylesheet" href="shared.css" />
+    <link rel="stylesheet" href="manage.css" />
+  </head>
+  <body class="manage">
+    <a class="skip-link" href="#lists">Skip to lists</a>
+
+    <header class="bar">
+      <h1 class="bar__title">Saved lists</h1>
+
+      <div class="bar__tools">
+        <label class="visually-hidden" for="search">Search saved pages</label>
+        <input
+          id="search"
+          type="search"
+          placeholder="Search titles, URLs and list names"
+          autocomplete="off"
+        />
+        <button id="new-list" class="button" type="button">New list</button>
+        <button id="export" class="button" type="button">Export JSON</button>
+      </div>
+    </header>
+
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+
+    <main id="lists" class="lists" tabindex="-1"></main>
+
+    <template id="list-template">
+      <section class="card">
+        <header class="card__head">
+          <h2 class="card__title"></h2>
+          <div class="card__actions">
+            <button class="link-button" type="button" data-action="open-all">Open all</button>
+            <button class="link-button" type="button" data-action="rename">Rename</button>
+            <button class="link-button link-button--danger" type="button" data-action="delete-list">
+              Delete
+            </button>
+          </div>
+        </header>
+        <ul class="items"></ul>
+      </section>
+    </template>
+
+    <script src="manage.js" type="module"></script>
+  </body>
+</html>
