@@ -110,3 +110,20 @@ selection, and status messages go through an `aria-live` region. Focus outlines
 are never removed, the icon-only remove buttons carry `aria-label`s naming both
 page and list, and the colour tokens in `shared.css` hold a 4.5:1 contrast ratio
 in both light and dark mode.
+
+## Privacy
+
+Your lists are ordinary Chrome bookmarks on your own machine, synced only by
+Chrome's own bookmark sync. The extension has no server, makes no network
+requests of any kind, and includes no analytics or telemetry. The only extra
+state it keeps is a map of domain to last-used list, held in
+`chrome.storage.local` so the popup can pre-select a list.
+
+Nothing is ever sent anywhere. Uninstalling leaves your bookmarks intact.
+
+## License
+
+MIT, see [LICENSE](LICENSE).
+
+The icons are not third-party assets. They are drawn from flat geometry by
+`tools/make-icons.py` and fall under the same license.
